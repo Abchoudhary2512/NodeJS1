@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "name": "T-Shirt",
+      "description": "A comfortable and stylish T-Shirt",
+      "price": 19.99,
+      "image": "images/t-shirt.jpg",
+      "category": "Clothing"
+    },
+    {
+      "id": 2,
+      "name": "Coffee Mug",
+      "description": "The perfect mug for your morning coffee",
+      "price": 9.99,
+      "image": "images/coffee-mug.jpg",
+      "category": "Kitchen"
+    },
+    {
+      "id": 3,
+      "name": "Wireless Headphones",
+      "description": "Listen to your music wirelessly",
+      "price": 79.99,
+      "image": "images/wireless-headphones.jpg",
+      "category": "Electronics"
+    },
+    {
+      "id": 4,
+      "name": "Notebook",
+      "description": "A beautiful notebook for all your notes",
+      "price": 14.99,
+      "image": "images/notebook.jpg",
+      "category": "Office Supplies"
+    },
+    {
+      "id": 5,
+      "name": "Water Bottle",
+      "description": "Stay hydrated with this reusable water bottle",
+      "price": 12.99,
+      "image": "images/water-bottle.jpg",
+      "category": "Fitness"
+    },
+    {
+      "id": 6,
+      "name": "Laptop Case",
+      "description": "Protect your laptop with this stylish case",
+      "price": 29.99,
+      "image": "images/laptop-case.jpg",
+      "category": "Accessories"
+    },
+    {
+      "id": 7,
+      "name": "Watch",
+      "description": "A stylish watch for any occasion",
+      "price": 49.99,
+      "image": "images/watch.jpg",
+      "category": "Accessories"
+    }
+  ]
+  
