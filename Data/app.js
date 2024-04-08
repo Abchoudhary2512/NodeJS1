@@ -67,6 +67,7 @@ const server = http.createServer((request, response) => {
 let myEmitter = new user();//here the myemitter variable stores the instance of the eventEmitter class
 myEmitter.on('userCreated',(id,name) => {
     console.log(`a ${name} user with ${id }is created`);
+    console.log('asdasd')
 })
 myEmitter.emit('userCreated',101,"ajay");//userCreate request emit by the myemitter and now we have to listen that request
 
@@ -89,18 +90,28 @@ server.listen(8000, "127.0.0.1", () => {
 // })
 //****************************************************** */
 // at production level use readstream
-server.on('request', (req, res) =>{
-        let rs = fs.createReadStream('./large-file.txt');
+// server.on('request', (req, res) =>{
+//         let rs = fs.createReadStream('./large-file.txt');
     
-        rs.on('data', (chunk) => {
-            res.write(chunk)
-        })
+//         rs.on('data', (chunk) => {
+//             res.write(chunk)
+//         })
     
-        rs.on('end', () => {
-            res.end();
-        })
+//         rs.on('end', () => {
+//             res.end();
+//         })
     
-        rs.on('error', (error) => {
-            res.end(error.message);
-        })
-    })
+//         rs.on('error', (error) => {
+//             res.end(error.message);
+//         })
+//     })
+
+/// solutionn3 using pipe
+server.on('request',(req,res) =>{
+    
+    let rs = fs.createReadStream('./large-file.txt');
+    console.log('hii')
+    rs.pipe(res);
+    // for pipe method 
+    // readable soruce.pip(writableDestination)
+})

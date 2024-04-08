@@ -1,0 +1,11 @@
+{
+  "name": "node-js-basic",
+  "version": "1.0.0",
+  "description": "basic of n0dejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajay2512",
+  "license": "ISC"
+}
