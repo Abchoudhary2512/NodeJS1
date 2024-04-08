@@ -71,8 +71,6 @@ myEmitter.on('userCreated',(id,name) => {
 })
 myEmitter.emit('userCreated',101,"ajay");//userCreate request emit by the myemitter and now we have to listen that request
 
-
-
 //starting a server
 server.listen(8000, "127.0.0.1", () => {
   console.log("server started");
@@ -100,7 +98,7 @@ server.listen(8000, "127.0.0.1", () => {
 //         rs.on('end', () => {
 //             res.end();
 //         })
-    
+ 
 //         rs.on('error', (error) => {
 //             res.end(error.message);
 //         })
@@ -114,4 +112,4 @@ server.on('request',(req,res) =>{
     rs.pipe(res);
     // for pipe method 
     // readable soruce.pip(writableDestination)
-})
+}) 
