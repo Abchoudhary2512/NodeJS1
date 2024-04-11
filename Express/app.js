@@ -3,6 +3,7 @@ const express = require("express");
 let app = express();
 let fs = require("fs");
 let movies = JSON.parse(fs.readFileSync("./movies.json"));
+const morgan = require('morgan')
 
 //routes = htttp method + url
 // app.get('/',(req,res)=>{
@@ -20,27 +21,21 @@ app.use(express.json()); //middleware //midlle in the request and response
 
 //middleware function // three arguments request,response,next 
 const logger = function(req,res,next){
-
+  console.log("logger middleware is called") 
+  next();
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use(logger)
+app.use(morgan('dev'))
+app.use((req,res,next)=>{
+      req.requestedAt = new Date().toISOString();
+      next();
+})
 // GET - /api/movies
 app.get("/api/v1/movies", (req, res) => {
   res.status(200).json({
     status: "success",
+    requestedAt: req.requestedAt,
     count: movies.length,
     data: {
       movies: movies,
@@ -169,6 +164,23 @@ app.delete("/api/v1/movies/:id", (req, res) => {
     });
   });
 });
+
+
+
+// const moviesRouter =express.Router();
+
+// moviesRouter.route('/')
+//     .get(getAllMovies)
+//     .post(createMovie)
+
+//     moviesRouter.route('/:id')
+//   .get(movies)
+//   .patch(updateMovie)
+//   .delete(deletedMovie)
+
+
+// app.use('/api/v1/movies',moviesRouter)
+
 
 
 //creatre a server
