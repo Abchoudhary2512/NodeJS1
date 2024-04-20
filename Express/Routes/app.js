@@ -113,6 +113,7 @@ const moviesRouter = require('./moviesRoutes');
 // Middleware
 app.use(express.json()); // JSON parsing middleware
 app.use(morgan("dev")); // Morgan logging middleware
+app.use(express.static('../Public'))
 
 // Routes
 app.use('/api/v1/movies', moviesRouter);
